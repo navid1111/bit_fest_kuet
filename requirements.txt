@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+langchain
+pytesseract
+Pillow
+langchain_community
+tiktoken
+langchainhub 
+chromadb
+langchain
+langchain-groq
+fastapi[standard]
+langchain_huggingface
