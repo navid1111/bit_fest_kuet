@@ -6,10 +6,9 @@ from typing import List, Optional
 
 import datetime
 
-# Ingredients CRUD
-
+# Ingredients
 async def create_ingredient(ingredient: IngredientCreate) -> Ingredient:
-    ingredient_dict = ingredient.dict()
+    ingredient_dict = ingredient.model_dump()
     result = await db.ingredients.insert_one(ingredient_dict)
     ingredient_dict["_id"] = result.inserted_id
     ingredient_dict["last_updated"] = ingredient_dict.get("last_updated", ingredient_dict.get("last_updated"))

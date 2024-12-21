@@ -1,10 +1,9 @@
-# app/routers/ingredients_router.py
-
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, FastAPI
 from typing import List
 
 from .models import IngredientCreate, Ingredient
 from .crud import create_ingredient, get_ingredient, update_ingredient, delete_ingredient, list_ingredients
+
 
 router = APIRouter(
     prefix="/ingredients",
@@ -14,6 +13,7 @@ router = APIRouter(
 
 @router.post("/", response_model=Ingredient)
 async def add_ingredient(ingredient: IngredientCreate):
+    print(ingredient)
     existing = await get_ingredient(ingredient.name)
     if existing:
         raise HTTPException(status_code=400, detail="Ingredient already exists.")
@@ -36,3 +36,7 @@ async def delete_existing_ingredient(name: str):
     if not success:
         raise HTTPException(status_code=404, detail="Ingredient not found.")
     return {"detail": "Ingredient deleted successfully."}
+
+
+app = FastAPI()
+app.include_router(router)
