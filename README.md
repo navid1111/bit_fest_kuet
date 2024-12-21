@@ -1,4 +1,4 @@
-```markdown
+
 # Mofa’s Kitchen Buddy
 
 Mofa’s Kitchen Buddy is a backend system designed to help Mofa manage his ingredients and suggest recipes based on the items available at home. Powered by a Large Language Model (LLM), the system allows Mofa to input and update his inventory, as well as interact with a chatbot to receive tailored recipe recommendations based on his preferences.
@@ -625,4 +625,3 @@ For any inquiries or support, please contact:
 - [LangChain](https://www.langchain.com/)
 - [Hugging Face](https://huggingface.co/)
 - [Uvicorn](https://www.uvicorn.org/)
-```
